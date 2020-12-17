@@ -45,9 +45,9 @@ namespace CADBooster.First.Addin.SolidWorks
         /// Resolve assemblies (the dll kind) that can't be found normally.
         /// Not necessary right because because we don't run inside the SolidWorks AppDomain. 
         /// </summary>
-        private static void ResolveMissingAssemblies()
+        private void ResolveMissingAssemblies()
         {
-            if (AppDomainBoundary.UseDetachedAppDomain) return;
+            if (UseDetachedAppDomain) return;
 
             _addinDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
             if (_addinDirectory == null)
